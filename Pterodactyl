@@ -1,0 +1,37 @@
+import java.util.Random;
+/**
+ * Class Pterodacytl
+ * @author Hasan A.S.
+ */
+public class Pterodactyl {
+    //posisi yang yang di-random adalah tinggi yakni posisiY
+    public int posisiX, posisiY, posisiZ;
+    
+    public Pterodactyl(int posisiX, int posisiY, int posisiZ){
+        Random rand = new Random();
+        //Asumsi 0 adalah di posisi darat, 50 di udara/setinggi kepala trex, 
+        //dan 100 di udara yang merupakan posisi tertinggi
+        this.posisiX=rand.nextInt();
+        this.posisiY=rand.nextInt();
+        this.posisiZ=rand.nextInt();
+    }
+    
+    public void spawn(){
+        int score=0;
+        Random rand = new Random();
+        boolean live = true;
+        int temp=rand.nextInt(1);
+        while(live==true){
+            if(temp==0){
+                Pterodactyl p = new Pterodactyl(0,rand.nextInt(101),0);
+            }
+            else if(score>=500&&temp==1){
+                //instantiate Cactus
+                //Cactus c = new Cactus (0, rand.nextInt(25)+25, 0);
+            }
+            else{
+                
+            }
+        }
+    }
+}
