@@ -16,11 +16,21 @@ public class Kaktus extends Rintangan{
     }
     
     @Override
-    protected void spawn{
+    protected void spawn(){
         Random r = new Random();
-        
+
         //random jarak dan tinggi
         //asumsi ada 2 tinggi, 1 = rendah; 2 = tinggi
-        Kaktus k= new Kaktus(r.nextInt(), r.nextInt(2), 0);
+        //kaktus muncul setiap score kelipatan 20 namun jumlahnya dirandom
+        int score = 20;
+        int jumlahKaktus= r.nextInt(x);
+        for (int i = score; i < y; i++) {
+            if(score%20==0){
+                Kaktus k = new Kaktus(jumlahKaktus, r.nextInt(2), 0);
+            } else {
+                Kaktus k = new Kaktus(0, 0, 0);
+            }
+        }
+
     }
 }
